@@ -50,8 +50,7 @@ func (receiver *AutoInc[T]) Next() (T, error) {
 	var current T = receiver.current
 
 	if current < previous {
-		var nada T
-		return nada, ErrOverFlow
+		return current, ErrOverFlow
 	}
 
 	return current, nil
